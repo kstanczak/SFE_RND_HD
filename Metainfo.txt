@@ -18,10 +18,10 @@ Keywords:         'kernel, Black Scholes, Breeden and Litzenberger,
                   Rookley, historical density'
 
 
-See also: 	  XFGSPDcb, XFGSPDcb2, COPdensitydaxreturn
+See also:         XFGSPDcb, XFGSPDcb2, COPdensitydaxreturn
 
 
-Author: 	  Sophie Stadlinger, Karolina Stanczak
+Author:           Sophie Stadlinger, Karolina Stanczak
 
 Submitted:        2015/12/11
 
