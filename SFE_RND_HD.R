@@ -303,7 +303,7 @@ for (i in 1:length(tau_day)) {
 # Plot historical density for the first maturity
 col = c("red", "#A7A7A7", "dodgerblue", "forestgreen", "gold")
 plot(hdens[[1]], xlim = c(7000, 15000), ylim = c(0, 7e-04), col = col[1], 
-     lwd = 3, xlab = "Spot Price", main = "Historical densities for different maturities")
+     lwd = 3, xlab = "Spot Price", main = "Historical density for different maturities")
 
 # Add plots for the next maturities
 for (i in 2:length(tau_day)) {
@@ -322,7 +322,7 @@ tau_hd  = c(rep(10, length(hdens[[1]]$x)), rep(20, length(hdens[[2]]$x)),
             length(hdens[[5]]$x)))
 df_hd   = cbind(tau_hd, s_hd, dens_hd)
 s3d_hd  = scatterplot3d(df_hd, type = "h", color = alpha("red3", alpha = 0.1), 
-                        main = "Historical densities for different maturities", tick.marks = TRUE, 
+                        main = "Historical density for different maturities", tick.marks = TRUE, 
                         font.main = 2, xlab = "Days to maturity", ylab = "Stock Price", zlab = "Density", 
                         x.ticklabs = c("25", "60", "88", "179", "270"), z.ticklabs = c("0", 
                         "1e-04", "", "3e-04", "", "5e-04", "", "7e-04"))
@@ -339,10 +339,8 @@ ylim = matrix(c(rep(0, length = 5), 8e-04, 6e-04, 5e-04, 5e-04, 5e-04),
 for (i in 1:length(tau_day)) {
   plot(SPD[[i]]$xGrid, SPD[[i]]$result, xlim = xlim[i, ], ylim = ylim[i, 
        ], col = "blue3", type = "l", lwd = 3, xlab = "Stock price", ylab = "Density", 
-       main = paste("RND and Historical Density for", tau_day[i], "days to maturity"))
+       main = paste("RND (blue) and HD (red) for", tau_day[i], "days to maturity"))
   lines(hdens[[i]], col = "red3", lwd = 3)
-  legend("topleft", c("RND", "HD"), lty = 1, lwd = 2, col = c("blue3", 
-  "red3"), bty = "n", cex = 0.8)
 }
 
 # RND and HD for the first maturity - Trading Strategy
@@ -352,5 +350,4 @@ plot(SPD[[1]]$xGrid, SPD[[1]]$result, xlim = xlim[1, ], ylim = ylim[1,], col = "
 lines(hdens[[1]], col = "red3", lwd = 3)
 text(8200, 0.000125, "Sell Puts", cex = 0.8)
 text(11600, 0.000125, "Buy Calls", cex = 0.8)
-legend("topleft", c("RND", "HD"), lty = 1, lwd = 2, col = c("blue3", "red3"), 
-       bty = "n", cex = 0.8)
+
